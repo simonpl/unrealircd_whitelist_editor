@@ -47,12 +47,12 @@ function makeconfig($channels)
         $out .= 'channel "'.$value.'";'."\n";
         $out .= '};'."\n";
     }
-    file_put_contents('whitelist.conf', $out);
-    chmod('whitelist.conf', 0666);
+    file_put_contents(IRC_CONFIGFILE, $out);
+    chmod(IRC_CONFIGFILE, 0666);
 }    
 function readconfig()
 {
-    $config = file_get_contents('whitelist.conf');
+    $config = file_get_contents(IRC_CONFIGFILE);
     $configs = explode('allow channel ', $config);
     $channels = array();
     foreach($configs as $key => $value)
@@ -67,11 +67,11 @@ function readconfig()
 }
 function rehash($settings)
 {
-    $socket = fsockopen($settings['server'], $settings['port'], $errno, $errstr);
-    $out = 'PASS '.$settings['ircpass']."\n";
+    $socket = fsockopen(IRC_SERVER, IRC_PORT, $errno, $errstr);
+    $out = 'PASS '.IRC_IRCPASS."\n";
     fwrite($socket, $out);
     sleep(1);
-    $out = 'NICK '.$settings['user']."\n";
+    $out = 'NICK '.IRC_USER."\n";
     fwrite($socket, $out);
     sleep(1);
     for($i = 1; $i <= 2; $i++)
@@ -93,10 +93,10 @@ function rehash($settings)
     $out = 'PONG :'.$pong;
     fwrite($socket, $out);
     sleep(1);
-    $out = 'USER '.$settings['user'].' '.$settings['user'].' '.$settings['user'].' :'.$settings['user'].' '.$settings['user']."\n";
+    $out = 'USER '.IRC_USER.' '.IRC_USER.' '.IRC_USER.' :'.IRC_USER.' '.IRC_USER."\n";
     fwrite($socket, $out);
     sleep(1);
-    $out = 'OPER '.$settings['user'].' '.$settings['pass']."\n";
+    $out = 'OPER '.IRC_USER.' '.IRC_PASS."\n";
     fwrite($socket, $out);
     sleep(1);
     $out = "REHASH \n";

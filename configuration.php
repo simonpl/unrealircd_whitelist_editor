@@ -1,9 +1,8 @@
 <?php
-$settings = array(
-    "user" => "rehashbot",
-    "pass" => "password", // Password the user uses to authenticate
-    "ircpass" => "password", // Password for the connection
-    "server" => "irc.server.net",
-    "port" => 6667
-    );
+define("IRC_USER", "rehashbot");
+defube("IRC_PASS", "password"); // Password the user uses to authenticate
+define("IRC_IRCPASS", "password"); // Password for the connection
+define("IRC_SERVER", "irc.server.net");
+define("IRC_PORT", 6667);
+define("IRC_CONFIGFILE", "whitelist.conf");
 ?>
