@@ -1,0 +1,68 @@
+Unreal IRCd Whitelist Editor
+============================
+
+Setup
+-----
+
+1.  Copy the files `index.php` and `configuration.php` to a directory that can be accessed by your webserver.  
+    You may want to use HTTP Authentification to protect the directory from unwanted access.
+
+2.  Create an empty file `whitelist.conf` or copy the one that was delivered to a directory, that can be  
+    accessed both by your webserver and your IRCd.
+
+3.  Adjust your `unrealircd.conf`
+
+    3.1     Deny all the channels:
+    
+        deny channel {
+            channel "#*";
+            reason "Channel not allowd";
+        };`
+    3.2     Add an oper account that can rehash:
+
+        oper rehashbot {
+            class clients;
+            from {
+                userhost *;
+            };
+            password "password";
+            flags
+            {
+                can_rehash;
+            };
+        };`
+
+    3.3     Include the file with the whitelist definitions.
+
+        include "/path/to/directory/whitelist.conf";
+            
+4. Adjust `configuration.php`. The value of `IRC_PASS` can be something random.
+5. You're done.
+
+Usage
+-----
+
+Access the file `index.php` via HTTP. Everything else should be clear.
+
+License
+-------
+
+Unreal IRCd Whitelist Editor let's you edit the channel whitelist of an Unreal IRCd
+
+Copyright (C) 2013 Simon Plasger
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See COPYING for details.
+
