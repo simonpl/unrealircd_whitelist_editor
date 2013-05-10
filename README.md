@@ -4,6 +4,8 @@ Unreal IRCd Whitelist Editor
 Setup
 -----
 
+Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups may cause problems or not work at all.
+
 1.  Copy the files `index.php` and `configuration.php` to a directory that can be accessed by your webserver.  
     You may want to use HTTP Authentification to protect the directory from unwanted access.
 
