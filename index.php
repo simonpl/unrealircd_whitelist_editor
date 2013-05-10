@@ -35,7 +35,7 @@ else
 {
     $channels = explode(',', $_POST['channel']);
     makeconfig($channels);
-    rehash($settings);
+    rehash();
     echo "Settings have been saved";
 }
 function makeconfig($channels)
@@ -65,7 +65,7 @@ function readconfig()
     }
     return $channels;
 }
-function rehash($settings)
+function rehash()
 {
     $socket = fsockopen(IRC_SERVER, IRC_PORT, $errno, $errstr);
     $out = 'PASS '.IRC_IRCPASS."\n";
