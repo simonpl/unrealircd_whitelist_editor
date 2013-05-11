@@ -86,7 +86,7 @@ function readconfig()
     }
     return $channels;
 }
-function rehash()
+function rehash() /* To Do: Error checking */
 {
     $socket = fsockopen(IRC_SERVER, IRC_PORT, $errno, $errstr);
     $out = 'PASS '.IRC_IRCPASS."\n";
