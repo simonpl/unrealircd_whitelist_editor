@@ -46,6 +46,21 @@ Usage
 
 Access the file `index.php` via HTTP. Everything else should be clear.
 
+How it works
+------------
+
+The tool maintains a file that is included in the users's `unrealircd.conf`.  
+In this file there are Allow-Statements for all the channels that may be accessed.  
+Every time the file is changed, the tool connects to the IRC Server, authenticates as an oper  
+and let's the demon rehash the configuration.
+
+Requirements
+------------
+
+PHP 5 or later, allowed to use fsockopen to connect to remote hosts. (Tested with 5.3.3)
+
+UnrealIRCd 3 or later (Tested with 3.2.10)
+
 License
 -------
 
