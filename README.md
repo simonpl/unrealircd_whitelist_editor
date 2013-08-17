@@ -6,11 +6,13 @@ Setup
 
 Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups may cause problems or not work at all.
 
-1.  Copy the files `index.php` and `configuration.php.dist` to a directory that can be accessed by your webserver. You may want to use HTTP Authentification to protect the directory from unwanted access.
+1.  Set up your Unreal IRCd. You can get the sources for this via http://www.unrealircd.com/
 
-2.  Create an empty file `whitelist.conf` or copy the one that was delivered to a directory, that can be accessed both by your webserver and your IRCd.
+2.  Copy the files `index.php` and `configuration.php.dist` to a directory that can be accessed by your webserver. You may want to use HTTP Authentification to protect the directory from unwanted access.
 
-3.  Adjust your `unrealircd.conf`
+3.  Create an empty file `whitelist.conf` or copy the one that was delivered to a directory, that can be accessed both by your webserver and your IRCd.
+
+4.  Adjust your `unrealircd.conf`
 
     3.1     Deny all the channels:
     
@@ -36,11 +38,11 @@ Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups ma
 
         include "/path/to/directory/whitelist.conf";
 
-4. Copy `configuration.php.dist` to `configuration.php`.
+5. Copy `configuration.php.dist` to `configuration.php`.
 
-5. Adjust `configuration.php`. The value of `IRC_PASS` can be something random.
+6. Adjust `configuration.php`. The value of `IRC_PASS` can be something random.
 
-6. You're done.
+7. You're done.
 
 Usage
 -----
