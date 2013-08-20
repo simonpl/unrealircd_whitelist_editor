@@ -19,7 +19,7 @@ Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups ma
         deny channel {
             channel "#*";
             reason "Channel not allowed";
-        };`
+        }`
     3.2     Add an oper account that can rehash:
 
         oper rehashbot {
@@ -32,7 +32,7 @@ Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups ma
             {
                 can_rehash;
             };
-        };`
+        };
 
     3.3     Include the file with the whitelist definitions.
 
@@ -52,9 +52,9 @@ Access the file `index.php` via HTTP. Everything else should be clear.
 How it works
 ------------
 
-The tool maintains a file that is included in the users's `unrealircd.conf`.  
-In this file there are Allow-Statements for all the channels that may be accessed.  
-Every time the file is changed, the tool connects to the IRC Server, authenticates as an oper  
+The tool maintains a file that is included in the users's `unrealircd.conf`. 
+In this file there are Allow-Statements for all the channels that may be accessed. 
+Every time the file is changed, the tool connects to the IRC Server, authenticates as an oper 
 and let's the demon rehash the configuration.
 
 Requirements
