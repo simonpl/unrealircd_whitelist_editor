@@ -19,7 +19,7 @@ Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups ma
         deny channel {
             channel "#*";
             reason "Channel not allowed";
-        }`
+        };
     3.2     Add an oper account that can rehash:
 
         oper rehashbot {
