@@ -14,13 +14,13 @@ Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups ma
 
 4.  Adjust your `unrealircd.conf`
 
-    3.1     Deny all the channels:
+    4.1     Deny all the channels:
     
         deny channel {
             channel "#*";
             reason "Channel not allowed";
         };
-    3.2     Add an oper account that can rehash:
+    4.2     Add an oper account that can rehash:
 
         oper rehashbot {
             class clients;
@@ -34,7 +34,7 @@ Note: The tool was tested with PHP 5.3.3 and Unreal IRCd 3.2.10. Other setups ma
             };
         };
 
-    3.3     Include the file with the whitelist definitions.
+    4.3     Include the file with the whitelist definitions.
 
         include "/path/to/directory/whitelist.conf";
 
